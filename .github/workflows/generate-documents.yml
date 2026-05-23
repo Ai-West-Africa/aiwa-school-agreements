@@ -182,7 +182,7 @@ jobs:
 
           if gh release view "$TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
             echo "Recreating immutable release: $TAG"
-            gh release delete "$TAG" --yes --cleanup-tag --repo "$GH_REPO"
+            gh release delete "$TAG" --yes --repo "$GH_REPO"
           fi
 
           create_args=(
@@ -247,7 +247,7 @@ jobs:
 
           if gh release view "$TAG_NAME" --repo "$GH_REPO" >/dev/null 2>&1; then
             echo "Refreshing persistent prerelease: $TAG_NAME"
-            gh release delete "$TAG_NAME" --yes --cleanup-tag --repo "$GH_REPO"
+            gh release delete "$TAG_NAME" --yes --repo "$GH_REPO"
           fi
 
           gh release create "$TAG_NAME" \

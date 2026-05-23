@@ -44,7 +44,6 @@ function Pandoc(doc)
   local skip_until_text = nil
   local include_matching_block = false
 
-  local is_media_form = doc_title:match("Media and Photography")
   local is_adult_media_form = doc_title:match("Adults")
   local is_parent_programme_form = doc_title:match("Parent and Guardian Permission Form")
   local is_student_form = doc_title:match("Student Participation Agreement")
@@ -80,7 +79,6 @@ function Pandoc(doc)
       "School:",
       "School / Organisation:",
       "Programme:",
-      "For full details on privacy, data use, and all AIWA policies, visit",
       "Entered in register:",
     }) then
       -- Drop header/footer admin lines that do not help the signer.
